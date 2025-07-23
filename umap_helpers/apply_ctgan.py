@@ -34,10 +34,10 @@ def syn_primary_gen(df_primary):
     # ---- Step 3: Progressive Generation ----
     original_data = df_primary.copy()
     all_generated = []
-    target = 100  # Number of unique samples per round
+    target = 50  # Number of unique samples per round
 
     def generate_unique_samples(model, original_data, target, max_attempts=5):
-        oversample_factor = 3
+        oversample_factor = 1
         attempts = 0
         while attempts < max_attempts:
             synthetic = model.sample(target * oversample_factor)
@@ -113,10 +113,10 @@ def syn_secondary_gen(df_secondary):
 
     # ---- Step 3: Define filter and generator helper ----
     level_cols = ["primary surfactant level (%)", "secondary surfactant level (%)", "tertiary surfactant level (%)"]
-    target = 100
+    target = 50
 
     def generate_unique_filtered_samples(model, original_data, target, level_cols, max_attempts=100):
-        oversample_factor = 3
+        oversample_factor = 1
         attempts = 0
         while attempts < max_attempts:
             synthetic = model.sample(target * oversample_factor)
@@ -205,11 +205,10 @@ def syn_tertiary_gen(df_tertiary):
 
     # ---- Step 3: Define helper function for generation with filtering ----
     level_cols = ['primary surfactant level (%)', 'secondary surfactant level (%)', 'tertiary surfactant level (%)']
-    target = 100
-    max_attempts = 5
+    target = 50
 
     def generate_unique_filtered_samples(model, original_data, target, level_cols, max_attempts=100):
-        oversample_factor = 3
+        oversample_factor = 1
         attempts = 0
         while attempts < max_attempts:
             synthetic = model.sample(target * oversample_factor)
