@@ -8,7 +8,7 @@ from scipy.optimize import differential_evolution, NonlinearConstraint
 from collections import OrderedDict
 
 st.set_page_config(page_title="Formulation Suggestion", layout="wide")
-st.title("Page 5: Performance Prediction")
+st.title("Page 5: Formulation Suggestion")
 
 clarity_classes = ['clear', 'slightly turbid', 'turbid']
 colour_classes = ['colourless', 'grey', 'white', 'yellow']
